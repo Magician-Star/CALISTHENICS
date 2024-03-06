@@ -10,7 +10,7 @@ export default function App() {
       <h1>App criado com React-Native</h1>
       <Text>Insira algum valor</Text>
       <TextInput style={{height:40, borderColor:'gray', borderWidth: 1, }} defaultValue="Escreva qualquer coisa aqui..." />
-      
+      <Textarea></Textarea>
       <StatusBar style="auto" />
     </View>
   );
