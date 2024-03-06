@@ -1,13 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { TextInput } from 'react-native-web';
 
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text >Mudando o texto</Text>
-      <Text>Nova Linha</Text>
+      <h1>App criado com React-Native</h1>
+      <Text>Insira algum valor</Text>
+      <TextInput style={{height:40, borderColor:'gray', borderWidth: 1, }} defaultValue="Escreva qualquer coisa aqui..." />
+      
       <StatusBar style="auto" />
     </View>
   );
