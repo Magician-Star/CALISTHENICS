@@ -3,12 +3,13 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { TextInput } from 'react-native-web';
 
-
+const nome = 'Gabriel'
 export default function App() {
   return (
+    
     <View style={styles.container}>
       <h1>App criado com React-Native</h1>
-      <Text>Insira algum valor</Text>
+      <Text>Eu me chamo {nome} </Text>
       <TextInput style={{height:40, borderColor:'gray', borderWidth: 1, }} defaultValue="Escreva qualquer coisa aqui..." />
       
       <StatusBar style="auto" />
