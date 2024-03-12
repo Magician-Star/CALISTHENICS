@@ -2,28 +2,29 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { ScrollView, TextInput } from 'react-native-web';
-import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
 
-const Drawer = createDrawerNavigator();
-
-
-
-export default function Menu(){
+const nome = 'Gabriel'
+export default function App() {
   return (
-    <NavigationContainer>
-    <Drawer.Navigator initialRouteName='App' drawerStyle={{ backgroundColor: "#313131", paddingVertical: 20}}>
-      <Drawer.Screen 
-      name='App' 
-      component={App} 
-      options={
-        {
-          drawerLabel:(({focused}) => <Text style={{color: focused ? '#313131' : '#fff'}}>Primeira Tela</Text>),
-          drawerIcon: (({focused}) => <Icon color={focused ? '#313131' : '#fff'} name='home'/>)
-      }}/>
-      <Drawer.Screen name='MeuApp' component={AppTwo}/>
-    </Drawer.Navigator>
-  </NavigationContainer>
-   
-  )
-};
+    
+    <View style={styles.container}>
+      <ScrollView>
+        <h1>Projeto Calibuilder</h1>
+        <Text>Eu me chamo {nome} </Text>
+        <TextInput style={{height:40, borderColor:'gray', borderWidth: 1, }} defaultValue="Escreva qualquer coisa aqui..." />
+        
+        <StatusBar style="auto" />
+      
+      </ScrollView>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
