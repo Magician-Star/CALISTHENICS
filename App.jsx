@@ -2,20 +2,20 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { ScrollView, TextInput } from 'react-native-web';
-import { createAppContainer} from 'react-navigation';
-import { createNativeStackNavigator } from "@react-native-community/masked-view";
+import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
-import Home from './src/Home';
-import About from './src/About';
+const Drawer = createDrawerNavigator();
 
-const AppNavigator = createNativeStackNavigator(
-  {
-    Home: { screen: Home },
-    About: { screen: About },
-  },
-  {
-    initialRouteName: 'Home',
-  }
-);
 
-export default createAppContainer (AppNavigator);
+
+export default function Menu(){
+  return (
+    <NavigationContainer>
+      <Drawer.Navigator initialRouteName='App' drawerStyle={{ backgroundColor: "#313131", paddingVertical: 20}}>
+        <Drawer.Screen name='App' component={App}/>
+        <Drawer.Screen name='MetApp' component={AppTwo}/>
+      </Drawer.Navigator>
+    </NavigationContainer>
+  )
+};
