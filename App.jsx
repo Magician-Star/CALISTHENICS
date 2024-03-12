@@ -9,12 +9,6 @@ export default function App() {
     
     <View style={styles.container}>
       <ScrollView>
-        <h1>Projeto Calibuilder</h1>
-        <Text>Eu me chamo {nome} </Text>
-        <TextInput style={{height:40, borderColor:'gray', borderWidth: 1, }} defaultValue="Escreva qualquer coisa aqui..." />
-        
-        <StatusBar style="auto" />
-      
       </ScrollView>
     </View>
   );
