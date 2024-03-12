@@ -1,27 +1,33 @@
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, TextInput } from 'react-native-web';
+import { Button } from 'react-native-web';
 
-import * as React from 'react';
-import { View, Text } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from 'react-navigation-stack';
-
-function HomeScreen() {
+import Home from './src/Home';
+const nome = 'Gabriel';
+const pagina = Home;
+export default function App() {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
+    
+    <View style={styles.container}>
+      <ScrollView>
+        <h1>Projeto Calibuilder</h1>
+        <Text>Eu me chamo {nome} </Text>
+        <TextInput style={{height:40, borderColor:'gray', borderWidth: 1, }} defaultValue="Escreva qualquer coisa aqui..." />
+        <Button title='Próxima página' onPress={pagina} />
+        <StatusBar style="auto" />
+      
+      </ScrollView>
     </View>
   );
 }
 
-const Stack = createNativeStackNavigator();
-
-function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
-
-export default App;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
