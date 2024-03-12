@@ -3,12 +3,12 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { ScrollView, TextInput } from 'react-native-web';
 import { createAppContainer} from 'react-navigation';
-import { createStackNavigator } from "react-navigation-stack";
+import { createNativeStackNavigator } from "@react-native-community/masked-view";
 
 import Home from './src/Home';
 import About from './src/About';
 
-const AppNavigator = createStackNavigator(
+const AppNavigator = createNativeStackNavigator(
   {
     Home: { screen: Home },
     About: { screen: About },
