@@ -2,32 +2,28 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { ScrollView, TextInput } from 'react-native-web';
-import { Button } from 'react-native-web';
+import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
-import Home from './src/Home';
-const nome = 'Gabriel';
-const pagina = Home;
-export default function App() {
+const Drawer = createDrawerNavigator();
+
+
+
+export default function Menu(){
   return (
-    
-    <View style={styles.container}>
-      <ScrollView>
-        <h1>Projeto Calibuilder</h1>
-        <Text>Eu me chamo {nome} </Text>
-        <TextInput style={{height:40, borderColor:'gray', borderWidth: 1, }} defaultValue="Escreva qualquer coisa aqui..." />
-        <Button title='Próxima página' onPress={pagina} />
-        <StatusBar style="auto" />
-      
-      </ScrollView>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    <NavigationContainer>
+    <Drawer.Navigator initialRouteName='App' drawerStyle={{ backgroundColor: "#313131", paddingVertical: 20}}>
+      <Drawer.Screen 
+      name='App' 
+      component={App} 
+      options={
+        {
+          drawerLabel:(({focused}) => <Text style={{color: focused ? '#313131' : '#fff'}}>Primeira Tela</Text>),
+          drawerIcon: (({focused}) => <Icon color={focused ? '#313131' : '#fff'} name='home'/>)
+      }}/>
+      <Drawer.Screen name='MeuApp' component={AppTwo}/>
+    </Drawer.Navigator>
+  </NavigationContainer>
+   
+  )
+};
