@@ -11,11 +11,7 @@ const Drawer = createDrawerNavigator();
 
 export default function Menu(){
   return (
-    <NavigationContainer>
-      <Drawer.Navigator initialRouteName='App' drawerStyle={{ backgroundColor: "#313131", paddingVertical: 20}}>
-        <Drawer.Screen name='App' component={App}/>
-        <Drawer.Screen name='MetApp' component={AppTwo}/>
-      </Drawer.Navigator>
-    </NavigationContainer>
+    <View><Text>Ola</Text></View>
+   
   )
 };
